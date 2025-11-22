@@ -26,7 +26,7 @@
 	}
 
 	.app {
-		@apply scroll-smooth overflow-y-auto overflow-x-hidden max-h-screen text-white;
+		@apply scroll-smooth overflow-y-auto overflow-x-hidden max-h-dvh border border-border text-white;
 	}
 
 	header {
