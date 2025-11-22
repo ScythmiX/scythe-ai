@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+:root {
+	--nav-h: 3.5rem;
+}
+
+@theme {
+	--font-inter: "Inter", sans-serif;
+	--font-poppins: "Poppins", sans-serif;
+
+	--color-bg: oklch(12.9% 0.042 264.695);
+	--color-border: oklch(27.9% 0.041 260.031);
+	--color-pri: oklch(70.7% 0.165 254.624);
+	--color-sec: oklch(70.4% 0.04 256.788);
+	--color-pri-l: oklch(80.9% 0.105 251.813);
+	--color-sec-l: oklch(86.9% 0.022 252.894);
+	--color-pri-d: oklch(62.3% 0.214 259.815);
+	--color-sec-d: oklch(55.4% 0.046 257.417);
+}
+
+@layer base {
+	html,
+	body {
+		@apply relative font-poppins bg-bg -z-10;
+	}
+
+	.app {
+		@apply scroll-smooth overflow-y-auto overflow-x-hidden max-h-screen text-white;
+	}
+
+	header {
+		@apply fixed top-0 left-0 z-50 w-full;
+	}
+
+	main {
+		@apply w-full max-w-7xl mx-auto mt-[var(--nav-h)] md:mt-[calc(var(--nav-h)+0.5rem)] lg:mt-[calc(var(--nav-h)+1rem)] px-8 md:px-11 lg:px-14;
+	}
+
+	h1,
+	h2,
+	h3 {
+		@apply drop-shadow-2xl/90 drop-shadow-sec-d;
+	}
+
+	h4,
+	h5,
+	h6 {
+		@apply drop-shadow-xl/70 drop-shadow-sec-d;
+	}
+}
+
+@layer components {
+	nav {
+		@apply flex justify-between items-center w-full max-w-7xl mx-auto relative h-[var(--nav-h)] md:h-[calc(var(--nav-h)+0.5rem)] lg:h-[calc(var(--nav-h)+1rem)] px-4 md:px-6 lg:px-8;
+	}
+
+	.hero {
+		@apply min-h-[calc(100dvh-var(--nav-h))] md:min-h-[calc(100dvh-var(--nav-h)-0.5rem)] lg:min-h-[calc(100dvh-var(--nav-h)-1rem)] flex justify-center items-center flex-col lg:flex-row gap-x-35;
+	}
+
+	.text-card {
+		@apply backdrop-blur-sm border bg-sec-d/20 border-sec/30 rounded-lg p-3 md:p-4 lg:p-5 shadow-2xl;
+	}
+}
+
+@layer utilities {
+	.grad-pri {
+		@apply from-blue-900 via-cyan-200 to-blue-400;
+	}
+
+	.grad-sec {
+		@apply from-slate-900 via-white to-slate-400;
+	}
+
+	.grad-bg {
+		@apply from-blue-500 to-cyan-400;
+	}
+
+	.bd-blur {
+		@apply bg-slate-500/20 border-slate-400/30;
+	}
+
+	.bd-blur-l {
+		@apply bg-slate-300/10 border-slate-200/20;
+	}
+
+	.bd-blur-d {
+		@apply bg-slate-700/30 border-slate-600/40;
+	}
+
+	.no-slide-in {
+		opacity: 0;
+		transform: translateY(1.5rem);
+	}
+
+	.animate-slide-in {
+		animation: slide-in 0.6s ease forwards;
+	}
+
+	.transition-slide-in {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.animate-delay-100 {
+		animation-delay: 0.1s;
+	}
+
+	.animate-delay-200 {
+		animation-delay: 0.2s;
+	}
+
+	.animate-delay-300 {
+		animation-delay: 0.3s;
+	}
+
+	.animate-delay-400 {
+		animation-delay: 0.4s;
+	}
+
+	.animate-delay-500 {
+		animation-delay: 0.5s;
+	}
+
+	.animate-delay-600 {
+		animation-delay: 0.6s;
+	}
+}
+
+@keyframes slide-in {
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
