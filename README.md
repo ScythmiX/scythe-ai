@@ -51,10 +51,5 @@ To build for deployment:
 
 ---
 
-## Demo
-Live on Vercel: 
-
----
-
 ## Author
 **ScythmiX**
